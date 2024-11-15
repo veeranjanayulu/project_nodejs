@@ -6,7 +6,7 @@ resource "aws_db_instance" "rds" {
   engine_version         = "8.0.32"
   instance_class         = "db.t3.micro"
   multi_az               = true
-  db_name                = "mydb"
+  db_name                = "test"
   username               = "admin"
   password               = "srivardhan"
   skip_final_snapshot    = true
