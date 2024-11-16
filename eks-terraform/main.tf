@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Specify your desired region
+  region = "ca-central-1"  # Specify your desired region
 }
 
  #Creating IAM role for EKS
@@ -121,7 +121,7 @@ data "aws_subnet" "subnet-1" {
  vpc_id = data.aws_vpc.main.id
  filter {
     name = "tag:Name"
-    values = ["Jumphost-subnet1"]
+    values = ["Jumphost-subnet11"]
  }
 }
 
@@ -129,14 +129,14 @@ data "aws_subnet" "subnet-2" {
  vpc_id = data.aws_vpc.main.id
  filter {
     name = "tag:Name"
-    values = ["Jumphost-subnet2"]
+    values = ["Jumphost-subnet22"]
  }
 }
 data "aws_security_group" "selected" {
   vpc_id = data.aws_vpc.main.id
   filter {
     name = "tag:Name"
-    values = ["Jumphost-sg"]
+    values = ["Jumphost-sgg"]
  }
 }
 
@@ -169,7 +169,7 @@ data "aws_security_group" "selected" {
     instance_types  = ["t2.small"]
 
     remote_access {
-      ec2_ssh_key               = "awskey"
+      ec2_ssh_key               = "key"
       source_security_group_ids = [data.aws_security_group.selected.id]
     }
 

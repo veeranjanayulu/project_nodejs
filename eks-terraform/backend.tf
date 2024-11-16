@@ -7,9 +7,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "shri50012"
-    key    = "eks/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "panindiastarprabash"
+    key    = "ekss/terraform.tfstate"
+    region = "ca-central-1"
   }
 
   required_version = ">= 1.6.3"
